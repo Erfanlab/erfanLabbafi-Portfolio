@@ -35,7 +35,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: dist/erfan-portfolio
+          path: dist/erfan-portfolio/browser
 
   deploy:
     needs: build
