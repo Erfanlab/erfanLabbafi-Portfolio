@@ -1,0 +1,16 @@
+<div class="relative overflow-hidden border-y border-line-soft bg-ink-2 py-3" aria-hidden="true">
+  <div class="ticker-track flex w-max items-center gap-10">
+    @for (group of [1, 2]; track group) {
+      <div class="flex items-center gap-10">
+        @for (entry of entries(); track entry.label ) {
+          <span class="flex items-center gap-2 font-mono text-xs text-fg-dim">
+            <span [class]="entry.direction === 'up' ? 'text-signal' : 'text-watch'">
+              {{ entry.direction === 'up' ? '▲' : '▼' }}
+            </span>
+            {{ entry.label }}
+          </span>
+        }
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<header
+  class="fixed inset-x-0 top-0 z-50 transition-colors duration-300"
+  [class.glass]="scrolled()"
+  [class.border-b]="scrolled()"
+  [class.border-transparent]="!scrolled()"
+>
+  <div class="section-shell section-pad flex h-16 items-center justify-between">
+    <a href="#top" class="font-display text-sm font-semibold tracking-tight text-fg" appMagnetic>
+      Erfan<span class="text-signal">.</span>Labbafi
+    </a>
+
+    <nav class="hidden items-center gap-8 lg:flex" aria-label="Primary">
+      @for (link of links; track link.href) {
+        <a [href]="link.href" class="text-sm text-fg-dim transition-colors hover:text-fg" appMagnetic>
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+
+    <div class="hidden items-center gap-4 lg:flex">
+      <span class="flex items-center gap-1.5 font-mono text-xs text-fg-dim" title="Local time in Tehran">
+        <span class="h-1.5 w-1.5 rounded-full bg-signal"></span>
+        {{ tehranTime() }} TEH
+      </span>
+      <a
+        href="#contact"
+        class="rounded-full border border-line bg-surface px-4 py-2 text-sm text-fg transition-colors hover:border-signal hover:text-signal"
+        appMagnetic
+      >
+        Let's Talk
+      </a>
+    </div>
+
+    <button
+      type="button"
+      class="grid h-10 w-10 place-items-center rounded-full border border-line text-fg lg:hidden"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-menu"
+      aria-label="Toggle menu"
+      (click)="menuOpen.set(!menuOpen())"
+    >
+      <lucide-icon [img]="menuOpen() ? CloseIcon : MenuIcon" [size]="18" />
+    </button>
+  </div>
+
+  @if (menuOpen()) {
+    <nav id="mobile-menu" class="glass border-t border-line lg:hidden" aria-label="Mobile">
+      <div class="section-pad flex flex-col gap-1 py-4">
+        @for (link of links; track link.href) {
+          <a
+            [href]="link.href"
+            class="rounded-lg px-3 py-3 text-sm text-fg-dim transition-colors hover:bg-surface-2 hover:text-fg"
+            (click)="closeMenu()"
+          >
+            {{ link.label }}
+          </a>
+        }
+      </div>
+    </nav>
+  }
+</header>

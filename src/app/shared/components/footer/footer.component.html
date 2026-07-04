@@ -1,0 +1,56 @@
+<footer class="border-t border-line-soft">
+  <div class="section-shell section-pad flex flex-col gap-8 py-12 md:flex-row md:items-end md:justify-between">
+    <div>
+      <p class="font-display text-lg text-fg">Erfan Labbafi</p>
+      <p class="mt-1 max-w-sm text-sm text-fg-dim">
+        Front-End Engineer building high-performance FinTech experiences from Tehran, Iran.
+      </p>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a
+        href="https://github.com/Erfanlab"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+        class="grid h-10 w-10 place-items-center rounded-full border border-line text-fg-dim transition-colors hover:border-signal hover:text-signal"
+        appMagnetic
+      >
+        <lucide-icon [img]="GithubIcon" [size]="16" />
+      </a>
+      <a
+        href="href=https://www.linkedin.com/in/mohammaderfan-labbafi"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        class="grid h-10 w-10 place-items-center rounded-full border border-line text-fg-dim transition-colors hover:border-signal hover:text-signal"
+        appMagnetic
+      >
+        <lucide-icon [img]="LinkedinIcon" [size]="16" />
+      </a>
+      <a
+        href="https://t.me/erfanlabbafi"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Telegram"
+        class="grid h-10 w-10 place-items-center rounded-full border border-line text-fg-dim transition-colors hover:border-signal hover:text-signal"
+        appMagnetic
+      >
+        <lucide-icon [img]="SendIcon" [size]="16" />
+      </a>
+      <a
+        href="#top"
+        aria-label="Back to top"
+        class="grid h-10 w-10 place-items-center rounded-full border border-line text-fg-dim transition-colors hover:border-signal hover:text-signal"
+        appMagnetic
+      >
+        <lucide-icon [img]="ArrowUpIcon" [size]="16" />
+      </a>
+    </div>
+  </div>
+
+  <div class="section-shell section-pad flex flex-col-reverse gap-2 border-t border-line-soft py-6 text-xs text-fg-faint md:flex-row md:items-center md:justify-between">
+    <p>© {{ year }} Erfan Labbafi. Built with Angular, signals and too much attention to easing curves.</p>
+    <p class="font-mono">v20 · Angular · TypeScript · Tailwind</p>
+  </div>
+</footer>

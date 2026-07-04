@@ -1,0 +1,27 @@
+<div class="section-shell section-pad py-28">
+  <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+    <app-section-heading
+      eyebrow="Writing"
+      title="Notes from production, coming soon."
+      description="Long-form pieces on the Angular and performance problems this portfolio only hints at."
+    />
+    <span class="mb-1 shrink-0 rounded-full border border-line px-4 py-1.5 font-mono text-xs text-fg-dim">
+      In progress
+    </span>
+  </div>
+
+  <div class="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    @for (topic of topics; track topic.title; let i = $index) {
+      <div
+        appReveal
+        [appRevealDelay]="(i % 3) * 0.07"
+        class="flex h-full flex-col justify-between rounded-2xl border border-dashed border-line p-6"
+      >
+        <p class="text-fg-dim">{{ topic.title }}</p>
+        <span class="mt-6 w-fit rounded-full bg-surface-2 px-3 py-1 font-mono text-[11px] text-fg-faint">
+          {{ topic.tag }}
+        </span>
+      </div>
+    }
+  </div>
+</div>

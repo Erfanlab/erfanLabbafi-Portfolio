@@ -1,0 +1,10 @@
+<div class="overflow-hidden section-shell section-pad grid grid-cols-2 gap-10 py-20 md:grid-cols-4">
+  @for (stat of stats; track stat.id; let i = $index) {
+    <div appReveal [appRevealDelay]="i * 0.08" class="text-center md:text-left">
+      <p class="text-4xl text-fg md:text-5xl">
+        <app-stat-counter [target]="stat.value ?? 0" [suffix]="stat.suffix ?? ''" [displayValue]="stat.display" />
+      </p>
+      <p class="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-fg-dim ">{{ stat.label }}</p>
+    </div>
+  }
+</div>

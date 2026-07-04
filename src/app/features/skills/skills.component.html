@@ -1,0 +1,34 @@
+<div class="block">
+  <div class="section-shell section-pad pt-28">
+    <app-section-heading
+      eyebrow="Skills"
+      title="The stack, instrumented."
+      description="Levels are self-assessed and read like a terminal — because that's the world these skills were built in."
+    />
+  </div>
+
+  <div class="mt-16 grid gap-x-12 gap-y-10 section-shell section-pad md:grid-cols-3">
+    @for (group of groups(); track group.category) {
+      <div appReveal>
+        <p class="font-mono text-xs uppercase tracking-[0.25em] text-fg-faint">{{ group.label }}</p>
+        <ul class="mt-5 flex flex-col gap-4">
+          @for (skill of group.skills; track skill.name) {
+            <li>
+              <div class="flex items-baseline justify-between text-sm">
+                <span class="text-fg">{{ skill.name }}</span>
+                <span class="font-mono-tabular text-xs text-fg-faint">{{ skill.level }}%</span>
+              </div>
+              <div class="mt-1.5 h-1 w-full overflow-hidden rounded-full bg-line-soft">
+                <div class="h-full rounded-full bg-signal" [style.width.%]="skill.level"></div>
+              </div>
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+
+  <div class="mt-16">
+    <app-ticker-tape [items]="tickerItems()" />
+  </div>
+</div>

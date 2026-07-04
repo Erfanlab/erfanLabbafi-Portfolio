@@ -1,0 +1,16 @@
+@if (isBrowser) {
+  <app-cursor />
+  <app-noise-overlay />
+}
+
+<div class="pointer-events-none fixed inset-x-0 top-0 z-[60] h-[2px]" appScrollProgress>
+  <div class="h-full origin-left scale-x-0 bg-signal"></div>
+</div>
+
+<app-nav />
+
+<main id="main">
+  <router-outlet />
+</main>
+
+<app-footer />

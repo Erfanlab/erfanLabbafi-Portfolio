@@ -1,0 +1,30 @@
+<div class="section-shell section-pad py-28">
+  <app-section-heading
+    eyebrow="Journey"
+    title="Electrical signals to Angular signals."
+    description="A straight line from engineering fundamentals to production FinTech interfaces."
+  />
+
+  <div #track class="relative mt-16 pl-10 md:pl-14">
+    <div class="absolute left-[7px] top-0 h-full w-px bg-line md:left-[11px]"></div>
+    <div
+      #line
+      class="absolute left-[7px] top-0 h-full w-px origin-top scale-y-0 bg-signal md:left-[11px]"
+    ></div>
+
+    <ol class="flex flex-col gap-14">
+      @for (item of items; track item.id; let i = $index) {
+        <li appReveal [appRevealDelay]="(i % 4) * 0.05" class="relative">
+          <span
+            class="absolute -left-10 top-1 grid h-4 w-4 place-items-center rounded-full border border-signal bg-ink md:-left-13"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-signal"></span>
+          </span>
+          <p class="font-mono text-xs tracking-[0.2em] text-fg-faint">{{ item.period }}</p>
+          <h3 class="mt-2 font-display text-xl text-fg md:text-2xl">{{ item.title }}</h3>
+          <p class="mt-2 max-w-xl text-fg-dim">{{ item.description }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</div>

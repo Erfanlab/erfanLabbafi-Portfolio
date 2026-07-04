@@ -1,0 +1,94 @@
+<div class="section-shell section-pad grid gap-16 py-28 lg:grid-cols-[0.9fr_1.1fr]">
+  <div appReveal>
+    <app-section-heading
+      eyebrow="Contact"
+      title="Have a role, a project, or a hard UI problem?"
+      description="I read everything that comes through here. Or reach out directly below."
+    />
+
+    <div class="mt-10 flex flex-col gap-3">
+      <a
+        href="mailto:erfanlabbafi450@gmail.com"
+        class="flex items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3.5 text-sm text-fg transition-colors hover:border-signal"
+        appMagnetic
+      >
+        <lucide-icon [img]="MailIcon" [size]="16" class="text-signal" /> erfanlabbafi450@gmail.com
+      </a>
+      <a
+        href="https://www.linkedin.com/in/mohammaderfan-labbafi"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3.5 text-sm text-fg transition-colors hover:border-signal"
+        appMagnetic
+      >
+        <lucide-icon [img]="LinkedinIcon" [size]="16" class="text-signal" /> LinkedIn
+      </a>
+      <a
+        href="https://github.com/Erfanlab"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3.5 text-sm text-fg transition-colors hover:border-signal"
+        appMagnetic
+      >
+        <lucide-icon [img]="GithubIcon" [size]="16" class="text-signal" /> GitHub
+      </a>
+      <a
+        href="https://t.me/erfanlabbafi"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3.5 text-sm text-fg transition-colors hover:border-signal"
+        appMagnetic
+      >
+        <lucide-icon [img]="TelegramIcon" [size]="16" class="text-signal" /> Telegram
+      </a>
+    </div>
+  </div>
+
+  <form appReveal [appRevealDelay]="0.1" [formGroup]="form" (ngSubmit)="submit()" class="flex flex-col gap-5" novalidate>
+    <div>
+      <label for="name" class="mb-2 block text-xs uppercase tracking-wide text-fg-faint">Name</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        class="w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-fg outline-none transition-colors focus:border-signal"
+        [attr.aria-invalid]="form.controls.name.invalid && form.controls.name.touched"
+      />
+    </div>
+
+    <div>
+      <label for="email" class="mb-2 block text-xs uppercase tracking-wide text-fg-faint">Email</label>
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        class="w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-fg outline-none transition-colors focus:border-signal"
+        [attr.aria-invalid]="form.controls.email.invalid && form.controls.email.touched"
+      />
+    </div>
+
+    <div>
+      <label for="message" class="mb-2 block text-xs uppercase tracking-wide text-fg-faint">Message</label>
+      <textarea
+        id="message"
+        rows="4"
+        formControlName="message"
+        class="w-full resize-none rounded-xl border border-line bg-surface px-4 py-3 text-sm text-fg outline-none transition-colors focus:border-signal"
+        [attr.aria-invalid]="form.controls.message.invalid && form.controls.message.touched"
+      ></textarea>
+    </div>
+
+    <button
+      #sendButton
+      type="submit"
+      class="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-signal px-6 py-3 text-sm font-medium text-ink disabled:cursor-not-allowed disabled:opacity-60"
+      appMagnetic
+    >
+      @if (sent()) {
+        <lucide-icon [img]="CheckIcon" [size]="16" /> Sent
+      } @else {
+        <lucide-icon [img]="TelegramIcon" [size]="16" /> Send Message
+      }
+    </button>
+  </form>
+</div>

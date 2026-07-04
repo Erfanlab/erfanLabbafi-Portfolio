@@ -1,0 +1,80 @@
+<section
+  #heroRoot
+  class="relative flex min-h-screen flex-col justify-center overflow-hidden pt-24"
+  [style.--glow-x]="glowX()"
+  [style.--glow-y]="glowY()"
+>
+  <app-market-graph-canvas class="opacity-60" />
+
+  <!-- Mouse-responsive radial glow -->
+  <div
+    class="pointer-events-none absolute inset-0"
+    style="background: radial-gradient(300px circle at var(--glow-x) var(--glow-y), rgba(67,232,201,0.10), transparent 60%);"
+  ></div>
+
+  <!-- Floating code snippet cards -->
+  @for (snip of snippets; track snip.code) {
+    <div
+      class="hero-snippet glass opacity-35 absolute hidden rounded-lg px-3 py-2 font-mono text-xs text-fg-dim shadow-lg lg:block"
+      [style.top]="snip.top"
+      [style.left]="snip.left"
+      style="animation: float 3s ease-in-out infinite;"
+      [style.animation-delay.s]="snip.delay"
+    >
+      {{ snip.code }}
+    </div>
+  }
+
+  <div class="section-shell section-pad relative">
+    <p class="hero-eyebrow flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-signal">
+      <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-signal"></span>
+      Available front-end roles
+    </p>
+
+    <h1 class="mt-6 max-w-4xl font-display text-5xl font-medium leading-[1.05] text-fg sm:text-6xl lg:text-7xl">
+      <span class="block overflow-hidden">
+        @for (word of line1; track word) {
+          <span class="hero-word inline-block">{{ word }}&nbsp;</span>
+        }
+      </span>
+      <span class="block overflow-hidden text-fg-dim">
+        @for (word of line2; track word) {
+          <span class="hero-word inline-block">{{ word }}&nbsp;</span>
+        }
+      </span>
+      <span class="block overflow-hidden">
+        @for (word of line3; track word) {
+          <span class="hero-word inline-block text-signal">{{ word }}&nbsp;</span>
+        }
+      </span>
+    </h1>
+
+    <p class="hero-subtitle mt-8 max-w-lg text-balance text-lg text-fg-dim">
+      Angular Specialist · TypeScript Expert · UI Engineer · Motion-driven Interfaces
+    </p>
+
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <a
+        href="#projects"
+        class="hero-cta group inline-flex items-center gap-2 rounded-full bg-signal px-6 py-3 text-sm font-medium text-ink "
+        appMagnetic
+      >
+        View Projects
+        <lucide-icon [img]="ArrowIcon" [size]="16" class="transition-transform group-hover:translate-x-0.5" />
+      </a>
+      <a
+        href="resume.pdf"
+        download
+        class="hero-cta inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm text-fg transition-colors hover:border-signal hover:text-signal"
+        appMagnetic
+      >
+        <lucide-icon [img]="DownloadIcon" [size]="16" />
+        Download Resume
+      </a>
+      <a href="#contact" class="hero-cta text-sm text-fg-dim underline-offset-4 transition-colors hover:text-fg hover:underline" appMagnetic>
+        Let's Talk →
+      </a>
+    </div>
+  </div>
+
+</section>

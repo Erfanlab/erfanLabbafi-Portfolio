@@ -1,0 +1,73 @@
+import { Project } from '../models/project.model';
+
+export const PROJECTS: readonly Project[] = [
+  {
+    id: 'easytrader',
+    name: 'EasyTrader Landing Page',
+    tagline: 'Production frontend for a live FinTech trading platform.',
+    problem:
+      'Traders were bouncing off a slow, generic landing page that failed to communicate the platform\u2019s speed or credibility before they ever reached the app.',
+    solution:
+      'Implemented the full Angular frontend — component architecture, performance budget and motion — translating trading-terminal cues (live figures, tabular data, precise timing) into a marketing surface.',
+    result: 'Shipped to production; now the primary conversion surface for a real-world FinTech audience.',
+    stack: ['Angular', 'TypeScript', 'SCSS', 'REST API', 'Performance'],
+    featured: true,
+    accent: '#43e8c9',
+  },
+  {
+    id: 'signals-lab',
+    name: 'Signals Lab',
+    tagline: 'A hands-on playground for Angular Signals patterns.',
+    problem: 'Teams migrating off NgRx and RxJS-heavy state needed a clear, working reference for signal patterns.',
+    solution:
+      'Built a set of isolated, documented examples — computed chains, effects, resource loading — with before/after comparisons against the RxJS equivalent.',
+    result: 'Used internally as onboarding material for engineers new to signal-based state.',
+    stack: ['Angular', 'Signals', 'TypeScript'],
+    featured: false,
+    accent: '#f5a623',
+  },
+  {
+    id: 'auth-flows',
+    name: 'Authentication Flows',
+    tagline: 'A reusable, secure auth module for enterprise apps.',
+    problem: 'Every new product was re-implementing login, guards and token refresh slightly differently.',
+    solution: 'Extracted a standalone auth module: route guards, interceptors, silent refresh and form validation.',
+    result: 'Adopted across two internal products, cutting new-app auth setup from days to hours.',
+    stack: ['Angular', 'RxJS', 'REST API', 'Forms'],
+    featured: false,
+    accent: '#7c8797',
+  },
+  {
+    id: 'ops-dashboard',
+    name: 'Operations Dashboard',
+    tagline: 'Real-time monitoring UI for internal operations.',
+    problem: 'Operators needed to track live system health without refreshing or losing context mid-shift.',
+    solution: 'Built a signal-driven dashboard with streaming updates, virtualized tables and alert states.',
+    result: 'Reduced time-to-detect for anomalies from minutes to seconds in daily use.',
+    stack: ['Angular', 'Signals', 'RxJS', 'Charts'],
+    featured: false,
+    accent: '#43e8c9',
+  },
+  {
+    id: 'design-system',
+    name: 'Design System',
+    tagline: 'A component library shared across FinTech products.',
+    problem: 'Inconsistent buttons, inputs and spacing across products slowed every new feature down.',
+    solution: 'Authored a themeable Angular component library with documented tokens and usage guidelines.',
+    result: 'Cut UI review cycles significantly and unified the look of three separate products.',
+    stack: ['Angular', 'Tailwind CSS', 'Design Systems', 'Figma'],
+    featured: false,
+    accent: '#f5a623',
+  },
+  {
+    id: 'portfolio',
+    name: 'This Portfolio',
+    tagline: 'The site you\u2019re looking at right now.',
+    problem: 'Static portfolios rarely demonstrate the actual engineering craft behind the claims on the page.',
+    solution: 'Built with Angular 20, standalone components, signals and GSAP-driven motion — no templates.',
+    result: 'A working demonstration of architecture, performance and motion discipline in one artifact.',
+    stack: ['Angular', 'Signals', 'Tailwind CSS', 'GSAP'],
+    featured: false,
+    accent: '#43e8c9',
+  },
+] as const;

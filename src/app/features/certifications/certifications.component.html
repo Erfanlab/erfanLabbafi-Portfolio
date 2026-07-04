@@ -1,0 +1,17 @@
+<div class="section-shell section-pad py-28">
+  <app-section-heading eyebrow="Certifications" title="Credentials, for the record." />
+
+  <div class="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    @for (cert of certifications; track cert.id; let i = $index) {
+      <div
+        appReveal
+        [appRevealDelay]="(i % 4) * 0.06"
+        class="rounded-xl border border-line bg-surface p-5 transition-colors hover:border-signal"
+      >
+        <lucide-icon [img]="BadgeIcon" [size]="18" class="text-signal" />
+        <p class="mt-4 text-sm text-fg">{{ cert.title }}</p>
+        <p class="mt-1 font-mono text-xs text-fg-faint">{{ cert.issuer }} · {{ cert.year }}</p>
+      </div>
+    }
+  </div>
+</div>
